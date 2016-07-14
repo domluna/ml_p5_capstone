@@ -7,6 +7,11 @@ Read the report [here](https://domluna.me/project/ml_capstone/).
 There are two ways to run the code.
 
 1. Install and run the docker image. The image is pretty beefy ~1.2GB and the doom environments take a few minutes to install.
+2. Install the dependencies for the project on your local machine.
+
+The only thing that might be tricky to install on the local machine would be the Doom environments so I would try that first and then resort to the docker image.
+
+#### Docker
 
 ```
 docker pull domluna/ml-capstone
@@ -20,7 +25,7 @@ cd ml_p5_capstone
 
 From here you can run the files described below.
 
-2. Install the dependencies for the project on your local machine
+#### Local
 
 ```
 pip install gym[doom] theano keras tabulate numpy scipy
