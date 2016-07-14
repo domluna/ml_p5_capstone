@@ -49,4 +49,6 @@ RUN git clone https://github.com/domluna/modular_rl.git \
 ENV PYTHONPATH /modular_rl
 
 # project code/snapshots
-ADD . ml_p5_capstone
+COPY . ml_p5_capstone
+
+ENTRYPOINT ["bash", "/ml_p5_capstone/setup.sh"]

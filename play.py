@@ -52,6 +52,7 @@ if __name__ == "__main__":
     if args.load_snapshot:
         hdf = load_h5_file(args)
         key = hdf["agent_snapshots"].keys()[-1]
+        print 'Loading snapshot from iteration {}'.format(int(key))
         latest_snapshot = hdf["agent_snapshots"][key]
         agent = cPickle.loads(latest_snapshot.value)
 
