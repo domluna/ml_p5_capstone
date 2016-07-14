@@ -36,13 +36,17 @@ RUN pip install requests[security]
 RUN pip install gym[doom]
 
 # Dependencies for modular_rl
-RUN pip install theano keras tabulate numpy scipy
+RUN pip install theano keras tabulate numpy scipy scikit-image matplotlib h5py
 
-# project specific
+# clean pip
+RUN rm -rf ~/.cache/pip
+
+# project specific modular_rl branch
 RUN git clone https://github.com/domluna/modular_rl.git \
         && cd modular_rl \
         && git checkout doms-branch
 
-RUN export PYTHONPATH=/modular_rl
+ENV PYTHONPATH /modular_rl
 
-RUN git clone https://github.com/domluna/ml_p5_capstone.git
+# project code/snapshots
+ADD . ml_p5_capstone

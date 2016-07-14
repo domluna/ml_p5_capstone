@@ -15,7 +15,7 @@ The only thing that might be tricky to install on the local machine would be the
 
 ```
 docker pull domluna/ml-capstone
-docker run -it domluna/ml-capstone /bin/bash
+docker run -it --rm domluna/ml-capstone /bin/bash
 ```
 
 Once you're in the container
@@ -29,7 +29,7 @@ From here you can run the files described below.
 #### Local
 
 ```
-pip install gym[doom] theano keras tabulate numpy scipy
+pip install gym[doom] theano keras tabulate numpy scipy scikit-image matplotlib h5py
 git clone https://github.com/domluna/modular_rl.git
 cd modular_rl
 git checkout doms-branch
