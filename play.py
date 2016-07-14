@@ -17,7 +17,7 @@ if __name__ == "__main__":
     update_argument_parser(parser, GENERAL_OPTIONS)
     parser.add_argument("--env", required=True)
     parser.add_argument("--agent", required=True)
-    parser.add_argument("--games", required=True, type=int)
+    parser.add_argument("--episodes", required=True, type=int)
     args, _ = parser.parse_known_args([arg for arg in sys.argv[1:] if arg not in ('-h', '--help')])
 
     env = make(args.env)
@@ -57,6 +57,6 @@ if __name__ == "__main__":
 
     gym.logger.setLevel(logging.WARN)
 
-    print 'Playing {} episodes'.format(args.games)
-    for _ in range(args.games):
+    print 'Playing {} episodes'.format(args.episodes)
+    for _ in range(args.episodes):
         animate_rollout(envf, agent, min(2000, args.timestep_limit))

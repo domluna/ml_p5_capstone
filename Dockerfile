@@ -1,6 +1,8 @@
 # A Dockerfile that sets up a full Gym install
 FROM ubuntu:14.04
 
+# WORKDIR /code
+
 RUN apt-get update
 RUN apt-get -y install xorg-dev
 RUN apt-get -y install libgl1-mesa-dev
@@ -37,5 +39,10 @@ RUN pip install gym[doom]
 RUN pip install theano keras tabulate numpy scipy
 
 # project specific
+RUN git clone https://github.com/domluna/modular_rl.git \
+        && cd modular_rl \
+        && git checkout doms-branch
 
-# xvfb-run -s "-screen 0 1400x900x24" bash
+RUN export PYTHONPATH=/modular_rl
+
+RUN git clone https://github.com/domluna/ml_p5_capstone.git

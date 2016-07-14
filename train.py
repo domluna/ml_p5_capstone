@@ -88,11 +88,4 @@ if __name__ == "__main__":
 
     run_policy_gradient_algorithm(envf, agent, callback=callback, usercfg=cfg)
 
-    if args.use_hdf:
-        hdf['env_id'] = env_spec.id
-        try:
-            hdf['env'] = np.array(cPickle.dumps(envf, -1))
-        except Exception:
-            print "failed to pickle env"  #pylint: disable=W0703
-
     env.monitor.close()
