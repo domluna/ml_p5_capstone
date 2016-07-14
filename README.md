@@ -15,6 +15,7 @@ The only thing that might be tricky to install on the local machine would be the
 
 ```
 docker pull domluna/ml-capstone
+docker run -it domluna/ml-capstone /bin/bash
 ```
 
 Once you're in the container
