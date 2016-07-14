@@ -6,7 +6,7 @@ Read the report [here](https://domluna.me/project/ml_capstone/).
 
 There are two ways to run the code.
 
-1. Install and run the docker image. The image is pretty beefy ~1.5GB uncompressed and the doom environments take a few minutes to install.
+1. Install and run the docker image. The image is pretty beefy ~1.5GB uncompressed and the doom environments take a few minutes to install. I haven't yet figured out how to display the video of an episode through the container, so no video will be shown but  total reward and timesteps taken will be printed.
 2. Install the dependencies for the project on your local machine.
 
 The only thing that might be tricky to install on the local machine would be the Doom environments so I would try that first and then resort to the docker image.
